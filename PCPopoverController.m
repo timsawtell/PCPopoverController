@@ -9,7 +9,7 @@
 #import "PCPopoverController.h"
 
 #pragma mark - Internal Constants
-CGFloat const contentInset = 10.0;
+CGFloat const contentInset = 7.0;
 CGFloat const capInset = 25.0;
 CGFloat const arrowHeight = 15.0;
 CGFloat const arrowBase = 24.0;
