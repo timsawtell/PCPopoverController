@@ -166,6 +166,12 @@ static UIColor *currentTintColor;
             rotation = CGAffineTransformMakeRotation(M_PI_2);
             break;
         }
+            
+        case UIPopoverArrowDirectionAny:
+        case UIPopoverArrowDirectionUnknown:
+        {
+            break;
+        }
     }
     
     borderImageView.frame = CGRectMake(left, top, width, height);
