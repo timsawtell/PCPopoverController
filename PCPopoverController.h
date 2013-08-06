@@ -12,7 +12,6 @@
 @interface PCPopoverController : UIPopoverController
 
 @property (readonly) UIColor *tintColor;
-
-- (id)initWithContentViewController:(UIViewController *)viewController andTintColor: (UIColor *)tintColor;
+- (id)initWithContentViewController:(UIViewController *)viewController andTintColor:(UIColor *)aTintColor usingDefaultAppearance:(BOOL)defaultAppearance;
 
 @end

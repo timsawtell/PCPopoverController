@@ -30,6 +30,7 @@ CGFloat const arrowBase = 24.0;
 #pragma mark - Internal Class Variables
 static UIColor *currentTintColor;
 
+
 #pragma mark - Initializers
 - (id)initWithFrame:(CGRect)frame
 {
@@ -180,6 +181,19 @@ static UIColor *currentTintColor;
 
 @end
 
+@interface PCPopoverControllerBackgroundViewNoContentAppearance : PCPopoverControllerBackgroundView
+
+@end
+
+@implementation PCPopoverControllerBackgroundViewNoContentAppearance
+
++ (BOOL)wantsDefaultContentAppearance
+{
+    return NO;
+}
+
+@end
+
 @implementation PCPopoverController
 
 #pragma mark - Properties
@@ -193,13 +207,17 @@ static UIColor *currentTintColor;
     return self;
 }
 
-- (id)initWithContentViewController:(UIViewController *)viewController andTintColor:(UIColor *)aTintColor
+- (id)initWithContentViewController:(UIViewController *)viewController andTintColor:(UIColor *)aTintColor usingDefaultAppearance:(BOOL)defaultAppearance
 {
     self = [super initWithContentViewController: viewController];
     if (!self)
         return nil;
     
-    [super setPopoverBackgroundViewClass: [PCPopoverControllerBackgroundView class]];
+    if (defaultAppearance) {
+        [super setPopoverBackgroundViewClass: [PCPopoverControllerBackgroundView class]];
+    } else {
+        [super setPopoverBackgroundViewClass: [PCPopoverControllerBackgroundViewNoContentAppearance class]];
+    }
     tintColor = aTintColor;
     
     return self;
