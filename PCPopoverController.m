@@ -203,7 +203,8 @@ static UIColor *currentTintColor;
 - (id)initWithContentViewController:(UIViewController *)viewController
 {
     self = [self initWithContentViewController: viewController
-                                  andTintColor: [UIColor blackColor]];
+                                  andTintColor: [UIColor blackColor]
+                        usingDefaultAppearance:YES];
     return self;
 }
 
